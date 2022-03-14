@@ -1,0 +1,40 @@
+class Employee():
+    increment_percent=1.1
+    def __init__(self,name,age,salary):
+        self.name=name
+        self.age=age
+        self.salary=salary
+
+    def employee_details(self):
+        print('{} {} {}'.format(self.name,self.age,self.salary))
+
+    def increment(self):
+        self.salary=int(self.salary * Employee.increment_percent)
+
+    @classmethod
+    def set_increment_percent(cls,amount):
+        cls.increment_percent=amount
+
+    #Alternate Contructor
+    @classmethod
+    def from_string(cls,em_str):
+        name,age,salary=em_str.split('-')
+        return cls(name,age,salary)
+
+    #Static method
+    @staticmethod
+    def weekend(day):
+        if day==6 or day==7:
+            return True
+        return False
+
+# emy1=Employee('John',25,15000)
+# emy2=Employee('Samuel',35,90000)
+
+# emy1.set_increment_percent(1.2)
+# print(emy1.increment_percent)
+
+emp1=Employee.from_string('John-25-15000')
+# print(emp1.employee_details())
+
+print(emp1.weekend(4))
