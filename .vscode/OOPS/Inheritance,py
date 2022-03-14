@@ -1,0 +1,58 @@
+class Employee():
+    increment_percent=1.04
+    def __init__(self,name,age,salary):
+        self.name=name
+        self.age=age
+        self.salary=salary
+
+    def employee_details(self):
+        print('{} {} {}'.format(self.name,self.age,self.salary))
+
+    def increment(self):
+        self.salary=int(self.salary * Employee.increment_percent)
+
+class developer(Employee):
+    increment_percent=1.07
+
+    def __init__(self, name, age, salary,prog_lang):
+        super().__init__(name, age, salary)
+        self.prog_lang=prog_lang
+
+
+class manager(Employee):
+    increment_percent=1.10
+
+    def __init__(self, name, age, salary,employees=None):
+        super().__init__(name, age, salary)
+        if employees is None:
+            self.employees=[]
+        else:
+            self.employees=employees
+
+
+    def add_emp(self,emp):
+        if emp  not in self.employees:
+            self.employees.append(emp)
+
+    def rem_emp(self,emp):
+        if emp  in self.employees:
+            self.employees.remove(emp)
+
+
+    def print_emp(self):
+        for emp in self.employees:
+            print('-->',emp.name)
+
+
+
+dev1=developer('John',25,15000,'JAVA')
+dev2=developer('Samuel',35,90000,'PYTHON')
+
+mgr1=manager('Naijo',30,10000,[dev1])
+
+# print(mgr1.name)
+#mgr1.print_emp()
+mgr1.add_emp(dev2)
+mgr1.print_emp()
+# print(Employee.increment(employee2))
+#print(dev1.prog_lang)
