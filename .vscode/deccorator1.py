@@ -1,8 +1,10 @@
 
-def addition(call):
+def addition(func):
     def perform(a,b):
         print ('Sum of '+ str(a) +' and ' + str(b) + ' = '  )
-        return call(a,b)
+        returned= func(a,b)
+        print('got the value from sum function()')
+        return returned
 
     return perform
 
