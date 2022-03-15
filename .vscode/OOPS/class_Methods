@@ -28,13 +28,13 @@ class Employee():
             return True
         return False
 
-# emy1=Employee('John',25,15000)
-# emy2=Employee('Samuel',35,90000)
+emy1=Employee('John',25,15000)
+emy2=Employee('Samuel',35,90000)
 
-# emy1.set_increment_percent(1.2)
-# print(emy1.increment_percent)
+emy1.set_increment_percent(1.2)
+print(emy1.increment_percent)
 
-emp1=Employee.from_string('John-25-15000')
+# emp1=Employee.from_string('John-25-15000')
 # print(emp1.employee_details())
 
-print(emp1.weekend(4))
+# print(emp1.weekend(4))

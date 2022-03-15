@@ -2,7 +2,6 @@ def dec1(func):
     def dec12():
         print('inside dec12')
         x=func()
-      
         return x - 3
     return dec12
 
